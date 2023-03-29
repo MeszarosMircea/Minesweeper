@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="script.js" charset="utf-8" ></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Minesweeper</title>
+    <style>
+      body {
+        background: url(https://img3.goodfon.com/original/2880x1800/d/d4/the-hurt-locker-matt-thompson.jpg);
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body class="container">
+    <div>
+      <div class="title-box">
+        <h3>Flags left: <span id="flagsLeft" class="value-box"></span></h3>
+      </div>
+    </div>
+    <div>
+      <div class="title-box">
+        <h3>Game state: <span id="gameOver" class="value-box"></span></h3>
+      </div>
+    </div>
+    <label for="numar-bombe"
+      >Select the number of bombs and then press Start:</label
+    >
+    <br /><br />
+
+    <input
+      type="range"
+      id="numar-bombe"
+      name="numar-bombe"
+      min="1"
+      max="99"
+      value="10"
+      oninput="showValue(this.value)"
+    />
+    <br /><br />
+    <div id="numar-bombe-value" class="value-box">10 💣</div>
+
+    <button id="startButton" onclick="startGame()">Start</button>
+
+    <button id="resetButton" onclick="resetGame()">Restart</button>
+
+    <br /><br />
+    <script>
+      function showValue(newValue) {
+        if (newValue !== "10") {
+          newValue += " 💣";
+        } else {
+          newValue += " 💣";
+        }
+        document.getElementById("numar-bombe-value").innerHTML = newValue;
+      }
+    </script>
+  </body>
+</html>
